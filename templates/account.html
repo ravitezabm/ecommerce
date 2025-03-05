@@ -1,0 +1,79 @@
+
+{% extends 'blank_layout.html' %}
+            {% block banner %}
+{% include 'header.html' %}
+{% load static %}
+            <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+
+                    <img src="{% static 'images/image1.png' %}" width="100%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                        <form id="LoginForm" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="text" name="username" required placeholder="Username">
+                            <input type="password" name="password" required placeholder="Password">
+                            <button type="submit" name="login" class="btn">Login</button>
+                            <a href="">Forget Password</a>
+                                    {% if messages %}
+                    <div>
+                        {% for message in messages %}
+                        {{ message }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                        </form>
+
+                        <form id="RegForm" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="text" name="username" maxlength="15" required minlength="5" placeholder="Username">
+                            <input type="email" name="email" required placeholder="Email">
+                            <input type="password" name="password" minlength="6" placeholder="Password">
+                            <input type="text" name="address" maxlength="50" required minlength="5" placeholder="Address">
+                            <input type="text" name="phone" maxlength="10" required minlength="5" placeholder="Phone Number">
+                            <button type="submit" name="register" class="btn">Register</button>
+                            {% if messages %}
+                    <div>
+                        {% for message in messages %}
+                        {{ message }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                            <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            {% endblock banner %}
+
+{% block content %}
+{% block extra_scripts %}
+<script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+        function register() {
+            RegForm.style.transform = "translatex(0px)";
+            LoginForm.style.transform = "translatex(0px)";
+            Indicator.style.transform = "translateX(100px)";
+
+        }
+        function login() {
+            RegForm.style.transform = "translatex(300px)";
+            LoginForm.style.transform = "translatex(300px)";
+            Indicator.style.transform = "translate(0px)";
+
+        }
+    </script>
+{% endblock %}
+{% endblock content %}
