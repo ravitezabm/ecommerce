@@ -1,0 +1,44 @@
+   {% load chunks_filters %}
+{% load static %}
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{% static 'images/front1.webp' %}">
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'images/front2.webp' %}">
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'images/front3.webp' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            {% for product in featured_product %}
+            <div class="col-4">
+                <a href="{% url 'detail_product' product.id %}"><img src="{{ product.image.url }}"></a>
+                <h4>{{ product.title }}</h4>
+                <p>{{ product.price }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <h2 class="title">Latest Products</h2>
+
+        <div class="row">
+            {% for product in latest_featured %}
+            <div class="col-4">
+                <a href="{% url 'detail_product' product.id %}"><img src="{{ product.image.url }}"></a>
+                <h4>{{ product.title }}</h4>
+                <p>{{ product.price }}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
