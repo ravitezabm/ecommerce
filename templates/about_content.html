@@ -1,0 +1,81 @@
+  {% load static %}
+  <div class="container-1">
+        <div class="image-1">
+            <img src="{% static 'images/abhiraman.jpg' %}" alt="Abhiraman">
+        </div>
+        <div class="content-1">
+            <h2>About Me</h2>
+            <p>Hi, I'm Abhiraman, a passionate Backend Developer. I specialize in creating high-quality websites and apps using python.
+            With expertise in the latest frameworks, AI technologies, and web development, I aim to deliver innovative digital solutions that make an impact.
+            Currently, I'm working on an AI teacher project, integrating voice and animation technologies to enhance learning experiences.
+            Let's connect and build something amazing together!</p>
+        </div>
+    </div>
+     <style>
+
+
+       body {
+
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+
+            margin: 0;  /* Ensures no extra space */
+        }
+
+        .container-1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+            flex-wrap: wrap;
+            margin: auto; /* Ensures centering */
+        }
+
+        .image-1 {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+        }
+
+        .image-1 img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .content-1 {
+            flex: 2;
+            padding: 20px;
+            max-width: 500px;
+        }
+
+        .content-1 h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .content-1 p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .image, .content {
+                max-width: 100%;
+            }
+        }
+    </style>

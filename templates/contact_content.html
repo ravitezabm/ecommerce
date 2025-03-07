@@ -1,0 +1,77 @@
+ <div class="contact-container">
+        <h2>Contact Me</h2>
+     {% if messages %}
+    {% for message in messages %}
+      <p style="color: green; font-weight: bold;">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+     <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send Message</button>
+</form>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abhiraman-g-625694177/">🔗 LinkedIn</a>
+            <a href="https://github.com/ravitezabm">📸 github</a>
+        </div>
+    </div>
+<style>
+
+        body {
+            font-family: Arial, sans-serif;
+
+
+            align-items: center;
+
+            background-color: #f4f4f4;
+            margin: 0;
+
+        }
+        .contact-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #ff7b7b;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff5252;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ff7b7b;
+            font-size: 20px;
+        }
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 20px;
+            }
+        }
+    </style>
