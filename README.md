@@ -73,14 +73,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or feedback, please contact us at support@abhiraman.pythonanywhere.com.
+For any questions or feedback, please contact us at abhiramanrs200@gmail.com
+images are copyrigted uploaded only for educational purposes, dm for removal
 
 ---
 
-**Note:** To display images in your `README.md`, ensure that the images are stored in your repository, and use relative paths to link them. For example:
 
-```markdown
-![Alt text](relative/path/to/img.jpg?raw=true "Optional Title")
-```
-
-This method ensures that the images render correctly on GitHub.
