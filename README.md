@@ -55,6 +55,10 @@ Access the website at `http://127.0.0.1:8000/`.
 
 ![Products Page](screenshots/addtocart.png)
 
+### Login Page
+
+![Login Page](screenshots/login.png)
+
 ### Product Details
 
 ![Product Details](screenshots/product1.png)
